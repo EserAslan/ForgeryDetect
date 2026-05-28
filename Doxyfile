@@ -1,0 +1,49 @@
+# ── Doxygen yapılandırması — Goruntu Sahteciligi Tespiti (backend) ──────
+# Çalıştırmak için: data\ klasöründe  ->  doxygen Doxyfile
+# Çıktı: data\docs\html\index.html  (Graphviz çağrı grafikleriyle)
+
+# ── Proje bilgisi ───────────────────────────────────────────────────────
+PROJECT_NAME           = "Goruntu Sahteciligi Tespiti"
+PROJECT_BRIEF          = "SIFT/SURF/AKAZE/ORB + ViT/Swin ile kopyala-tasi sahtecilik tespiti"
+PROJECT_NUMBER         = 1.0
+OUTPUT_DIRECTORY       = docs
+OUTPUT_LANGUAGE        = Turkish
+
+# ── Girdi: yalnızca Python backend kaynagı ──────────────────────────────
+INPUT                  = backend
+FILE_PATTERNS          = *.py
+RECURSIVE              = YES
+INPUT_ENCODING         = UTF-8
+
+# venv, migration ve model klasorlerini dokumantasyon disi birak
+EXCLUDE_PATTERNS       = */venv/* */.venv/* */migrations/* */models/* */__pycache__/*
+
+# ── Python icin ayarlar ─────────────────────────────────────────────────
+OPTIMIZE_OUTPUT_JAVA   = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+PYTHON_DOCSTRING       = YES
+SOURCE_BROWSER         = YES
+
+# ── Graphviz (zorunlu: diyagramlar icin) ────────────────────────────────
+HAVE_DOT               = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+CLASS_DIAGRAMS         = YES
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+# Graphviz PATH'te degilse asagidaki satiri ac ve bin klasorunu yaz:
+# DOT_PATH             = "C:/Program Files/Graphviz/bin"
+
+# ── Cikti formatlari ────────────────────────────────────────────────────
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+
+# Uyarilari goster, ama eksik dokumantasyon icin durma
+QUIET                  = NO
+WARN_IF_UNDOCUMENTED   = NO
